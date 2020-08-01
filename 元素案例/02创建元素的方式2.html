@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02创建元素的方式2</title>
+</head>
+<style>
+   div{
+    width:200px;
+    height: 200px;
+    border:1px solid green
+    } 
+</style>
+
+<body>
+    <input type="button" value="创建一个p" id="btn">
+    <div id="container"></div>
+
+    <script src="../common.js"></script>
+    <script>
+        myobj('btn').onclick=function(){
+            myobj("container").innerHTML="<p>我是一个p标签</p>"
+        }
+    </script>
+</body>
+</html>
