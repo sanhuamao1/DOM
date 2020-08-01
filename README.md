@@ -75,13 +75,46 @@ document.getElementById("btn").onclick=function(){
 - 根据类样式的名称获取元素——getElementsByClassName('样式名称')【案例21】
 - 鼠标进入onmouseover与离开事件onmouseout【案例22】
 - 搜索框获取焦点onfocus与失去焦点onblur【案例23】
+- 自定义属性操作，一个是标签的属性，一个是dom对象的属性，两者不一样,需要用到getAttribute("属性名")来获取属性值【案例24】  
 
 
 ## 知识点小结
-### 获取元素的方式
+### 1. 获取元素的方式
 - document.getElementById('id属性值')——根据id属性值获取，返回一个
 - document.getElementsByTagName('标签名称')——根据标签名获取，返回一个伪数组
 - document.getElementsByName('name的属性值')——根据name的属性获取，返回一个伪数组
 - document.getElementsByClassName('类名称')——根据类名称获取，返回一个伪数组
 - document.querySelector('选择器名称')——根据选择器获取，返回一个
 - document.querySelectorAll('选择器名称')——根据选择器获取，返回伪数组
+
+
+### 2. 设置标签中的文本内容
+- textContext：谷歌，火狐支持
+- innerText：兼容性较好，谷歌，火狐，IE支持
+  ***兼容性封装——设置任意标签中间的文本内容***
+  ```js
+  function setInnerText(element,text){
+      //判断浏览器是否支持
+      if(typeof element.textContent=="undefined"){
+          element.innerText=text
+      }else{
+          element.textContext=text
+      }
+
+  }
+  ```
+  ***兼容性封装—获取任意标签中间的文本内容***
+  ```js
+    function getInnerText(element){
+      if(typeof element.textContent=="undefined"){
+          return element.innerText;
+      }else{
+          return element.textContext;
+      }
+
+  }
+  ```
+
+  ### 3. innerHtml
+  可以设置html标签内容，比如`obj.innerHtml="<p>这个标签可以被解析</p>"`，还会获取到标签。而innerText只能获取文本内容，且不能获取标签
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23搜索框获取焦点与失去焦点</title>
+</head>
+<style>
+    li{
+        list-style-type: none;
+    }
+</style>
+<body>
+    <ul>
+        <li score="11">小红</li>
+        <li score="22">小明</li>
+        <li score="33">李华</li>
+    </ul>
+
+    <script src="common.js"></script>
+    <script>
+        var lis=document.getElementsByTagName('li')
+        for(var i=1;i<lis.length;i++){
+            lis[i].onclick=function(){
+                //返回undefined
+                //因为一个是标签的属性，一个是dom对象的属性，两者不一样
+                // alert(this.scroll)
+                alert(this.getAttribute("score"))
+            }
+        }
+    </script>
+</body>
+</html>
