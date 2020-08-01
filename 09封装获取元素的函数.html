@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09封装获取元素的函数</title>
+</head>
+<body>
+    <input type="button" id="btn" value="显示大图"/>
+    <img src="" id="img">
+    <script>
+        function obj(id){
+            return document.getElementById(id)
+        }
+        obj("btn").onclick=function(){
+            obj("img").src="./imgs/1.png"
+        }
+    </script>
+</body>
+</html>
