@@ -56,7 +56,7 @@ document.getElementById("btn").onclick=function(){
 </script>
 ```
 
-## 知识点小结
+## 案例小结
 - innerText：只要是成对的标签，设置中间的文本时，都使用这个【案例2】
 - document.getElementsByTagName("标签的名字")：根据标签名字获取标签，返回一个伪数组【案例4】
 - 在某个元素的事件中，自己的事件中的this就是当前这个元素的对象【案例6】
@@ -71,3 +71,17 @@ document.getElementById("btn").onclick=function(){
 - 用三元表达式简化类样式切换及body标签的获取【案例17】
 - 阻止超链接默认跳转，使用return false【案例18】
 - 实现相册【案例19】
+- 根据表单标签的name属性获取元素——getElementsByName('name的属性值')【案例20】
+- 根据类样式的名称获取元素——getElementsByClassName('样式名称')【案例21】
+- 鼠标进入onmouseover与离开事件onmouseout【案例22】
+- 搜索框获取焦点onfocus与失去焦点onblur【案例23】
+
+
+## 知识点小结
+### 获取元素的方式
+- document.getElementById('id属性值')——根据id属性值获取，返回一个
+- document.getElementsByTagName('标签名称')——根据标签名获取，返回一个伪数组
+- document.getElementsByName('name的属性值')——根据name的属性获取，返回一个伪数组
+- document.getElementsByClassName('类名称')——根据类名称获取，返回一个伪数组
+- document.querySelector('选择器名称')——根据选择器获取，返回一个
+- document.querySelectorAll('选择器名称')——根据选择器获取，返回伪数组

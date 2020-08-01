@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20根据name属性获取元素</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="输入改变"/>
+    <input type="text" name="name"/>
+
+
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+            //它是一个伪数组
+            document.getElementsByName('name')[0].value="改变"
+        }
+    </script>
+</body>
+</html>

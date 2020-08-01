@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21根据类样式的名称获取元素</title>
+    <style>
+        .cls{
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" id="btn" value="变色"/>
+    <input type="text" class="cls"/>
+    <input type="text"/>
+    <input type="text" class="cls"/>
+
+
+    <script src="common.js"></script>
+    <script>
+        document.querySelectorAll
+        //低版本浏览器不支持
+        myobj("btn").onclick=function(){   
+            var inputs=document.getElementsByClassName('cls')
+            for(var i=0;i<inputs.length;i++){
+                inputs[i].style.backgroundColor="pink"
+            }
+        }
+    </script>
+</body>
+</html>

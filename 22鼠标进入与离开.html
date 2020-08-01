@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22鼠标进入与离开</title>
+    <style>
+       div{
+           width: 200px;
+           height: 170px;
+           background-color: rgb(172, 160, 160);
+           border: 2px solid rgb(172, 160, 160);
+           margin-left: 5px;
+           float: left;
+       }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script src="common.js"></script>
+        
+    <script>
+        var divs=document.getElementsByTagName('div')
+        for(var i=0;i<divs.length;i++){
+            divs[i].onmouseover=function(){
+                this.style.border="2px solid yellow"
+            }
+            divs[i].onmouseout=function(){
+                this.style.border=""
+            }
+        }
+    </script>
+</body>
+</html>
