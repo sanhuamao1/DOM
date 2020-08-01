@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24自定义属性操作</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+    }
+    ul{
+        list-style-type: none;
+    }
+    .box{
+        width: 400px;
+        height: 300px;
+        border: 1 solid #ccc;
+        margin:100px auto;
+        overflow: hidden;
+    }
+    .hd{
+        height: 45ps;
+    }
+    .hd span{
+        display: inline-block;
+        width: 90px;
+        background-color: rgb(138, 172, 145);
+        line-height: 45px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .hd span.current{
+        background-color: rgb(89, 126, 97);
+    }
+    .bd li{
+        height: 250px;
+        background-color: rgb(89, 126, 97);
+        display: none;
+    }
+    .bd li.current{
+        display: block;
+    }
+</style>
+<body>
+    <div class="box" id="box">
+        <div class="hd">
+            <span class="current">春天</span>
+            <span>夏天</span>
+            <span>秋天</span>
+            <span>冬天</span>
+        </div>
+        <div class="bd">
+            <ul>
+                <li class="current">什么时候春天啊</li>
+                <li>到了夏天了</li>
+                <li>秋天要来了</li>
+                <li>冬天怎么还没过去</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="common.js"></script>
+    <script>
+        //获取最外便的div
+        var box=myobj("box")
+        var hd=box.getElementsByTagName("div")[0]
+        var bd=box.getElementsByTagName("div")[1]
+        var list=bd.getElementsByTagName("li")
+        var spans=hd.getElementsByTagName("span")
+        for(var i=0;i<spans.length;i++){
+            //给span赋值i
+            spans[i].setAttribute("index",i)
+            spans[i].onclick=function(){
+                //先移出已有属性，这里是current
+                for(var j=0;j<spans.length;j++){
+                    spans[j].removeAttribute("class")
+                }
+                //再给点击了的标签加上current
+                this.className="current"
+
+                //获取index值
+                var num=this.getAttribute("index")
+                for(var k=0;k<list.length;k++){
+                    list[k].removeAttribute("class")
+                }
+                list[num].className="current"
+            }
+        }
+         
+    </script>
+</body>
+</html>
