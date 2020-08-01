@@ -66,3 +66,5 @@ document.getElementById("btn").onclick=function(){
 - 只读readonly与禁用disabled；表单标签的内容可用value赋值【案例12】
 - 在js使用css样式时，属性的写法不大一样：需要把-去掉，再把后面的单词首字母大写【案例13】
 - 点击按钮后改变按钮的value，即实现按钮值的切换【案例14】
+- 在js代码中DOM操作设置元素类样式的时候，不用class关键字，而是用className。通常用于修改多个样式的情况【案例15】
+- 通过判断类样式是否存在来修改类样式【案例16】

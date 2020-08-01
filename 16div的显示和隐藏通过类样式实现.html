@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16div的显示和隐藏通过类样式实现</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: rgb(230, 213, 213);
+    }
+    .cls{
+        display: none;
+    }
+</style>
+<body>
+    <input id="btn" value="隐藏" type="button">
+    <div id="div"></div>
+    
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+            if(myobj("div").className!="cls"){
+                myobj("div").className="cls"
+                this.value="显示"
+            }else{
+                myobj("div").className=""
+                this.value="隐藏"
+            }
+        }
+    </script>
+</body>
+</html>
