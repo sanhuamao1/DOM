@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03点击按钮修改超链接及文字内容</title>
+</head>
+<body>
+    <input type="button" id="btn" value="改变a的超链接及内容"/>
+    <a href="https://github.com/sanhuamao1/DOM/tree/master" target="_blank" id="a">案例库</a>
+    <script>
+        document.getElementById("btn").onclick=function(){
+            var a=document.getElementById("a")
+            a.href="https://www.csdn.net/"
+            a.innerText="csnd"
+        }
+    </script>
+</body>
+</html>
