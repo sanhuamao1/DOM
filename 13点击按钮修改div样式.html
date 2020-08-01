@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13点击按钮修改div样式</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: rgb(209, 152, 152);
+    }
+</style>
+<body>
+    <div id="div"></div>
+    <input id="btn" value="修改" type="button">
+    
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+            myobj("div").style.width="400px"
+            myobj("div").style.height="400px"
+            myobj("div").style.backgroundColor="pink"
+        }
+    </script>
+</body>
+</html>

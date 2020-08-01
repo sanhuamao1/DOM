@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12文本域和按钮的相关属性</title>
+</head>
+<body>
+    <textarea cols="35" rows="10" id="text" readonly="readonly">
+        这是不可以修改的内容：
+        没错你修改不了
+        除非你点击修改按钮
+        不过修改按钮我已经给你赋值啦
+        你还是不能自定义修改
+        嘎嘎嘎
+    </textarea>
+    <input id="btn" value="修改" type="button">
+    
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+           myobj("text").value="嘎嘎嘎嘎嘎"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11点击按钮选中下拉框的值</title>
+</head>
+<body>
+    <input type="button" id="btn" value="点击"/>
+    <select>
+        <option value="1">足球</option>
+        <option value="1" id="me">篮球</option>
+        <option value="1">排球</option>
+    </select>
+    
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+            myobj("me").selected=true
+        }
+    </script>
+</body>
+</html>
