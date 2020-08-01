@@ -122,8 +122,8 @@ document.getElementById("btn").onclick=function(){
   }
   ```
 
- ## 3. innerHtml
-  可以设置html标签内容，比如`obj.innerHtml="<p>这个标签可以被解析</p>"`，还会获取到标签。而innerText只能获取文本内容，且不能获取标签
+ ## 3. innerHTML
+  可以设置html标签内容，比如`obj.innerHTML="<p>这个标签可以被解析</p>"`，还会获取到标签。而innerText只能获取文本内容，且不能获取标签
 
  ## 4. 节点
 ***属性***
