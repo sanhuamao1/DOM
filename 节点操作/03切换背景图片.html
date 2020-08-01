@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03切换背景图片</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url('../imgs/2.jpg');
+    }
+    .mask{
+        height: 230px;
+        background-color: rgba(202, 226, 213, 0.5);
+        text-align: center;
+    }
+    .mask img{
+        display: inline-block;
+        margin-top: 55px;
+        width: 230px;
+        height: 110px;
+        cursor: pointer;
+    }
+</style>
+<body id="bd">
+    <div class="mask" id="mask">
+        <img src="../imgs/2.jpg" alt="">
+        <img src="../imgs/3.jpg" alt="">
+        <img src="../imgs/4.jpg" alt="">
+    </div>
+
+    <script src="../common.js"></script>
+    <script>
+        var imgs=myobj("mask").children//获取子元素
+        for(var i=0;i<imgs.length;i++){
+            imgs[i].onclick=function(){
+                document.body.style.backgroundImage="url("+this.src+")"
+            }
+        }
+   
+        
+    </script>
+</body>
+</html>
