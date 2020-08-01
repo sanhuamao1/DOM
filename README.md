@@ -61,7 +61,7 @@ document.getElementById("btn").onclick=function(){
 - document.getElementsByTagName("标签的名字")：根据标签名字获取标签，返回一个伪数组【案例4】
 - 在某个元素的事件中，自己的事件中的this就是当前这个元素的对象【案例6】
 - 排他功能，即点击一个事件前会重置标签的属性【案例7】
-- 标签属性的特性【案例10】
+- 表单标签属性的特性【案例10】
 - 封装根据元素id获取元素的函数及引用【common.js】【案例11】
 - 只读readonly与禁用disabled；表单标签的内容可用value赋值【案例12】
 - 在js使用css样式时，属性的写法不大一样：需要把-去掉，再把后面的单词首字母大写【案例13】
