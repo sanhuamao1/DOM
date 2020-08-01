@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17页面开关灯</title>
+</head>
+<style>
+    .cls{
+        background-color: black;
+    }
+</style>
+<body>
+    <input id="btn" value="关灯" type="button">
+    
+    <script src="common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+            //document.body获取body标签
+            //判断body是否有cls类样式
+            document.body.className=document.body.className!="cls"?"cls":""
+            this.value=document.body.className!="cls"?"关灯":"开灯"
+        }
+    </script>
+</body>
+</html>

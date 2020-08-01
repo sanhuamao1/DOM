@@ -68,3 +68,4 @@ document.getElementById("btn").onclick=function(){
 - 点击按钮后改变按钮的value，即实现按钮值的切换【案例14】
 - 在js代码中DOM操作设置元素类样式的时候，不用class关键字，而是用className。通常用于修改多个样式的情况【案例15】
 - 通过判断类样式是否存在来修改类样式【案例16】
+- 用三元表达式简化类样式切换及body标签的获取【案例17】
