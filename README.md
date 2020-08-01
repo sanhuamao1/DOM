@@ -65,3 +65,4 @@ document.getElementById("btn").onclick=function(){
 - 封装根据元素id获取元素的函数及引用【common.js】【案例11】
 - 只读readonly与禁用disabled；表单标签的内容可用value赋值【案例12】
 - 在js使用css样式时，属性的写法不大一样：需要把-去掉，再把后面的单词首字母大写【案例13】
+- 点击按钮后改变按钮的value，即实现按钮值的切换【案例14】
