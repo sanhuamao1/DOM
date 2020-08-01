@@ -8,24 +8,30 @@
 <style>
     li{
         list-style-type: none;
+        cursor:pointer
+    }
+    .cls{
+        color:red
     }
 </style>
 <body>
-    <ul>
-        <li score="11">小红</li>
-        <li score="22">小明</li>
-        <li score="33">李华</li>
-    </ul>
+    <li score="11" class="cls">小红</li>
+    <li score="22" class="cls">小明</li>
+    <li score="33">李华</li>
 
     <script src="common.js"></script>
     <script>
         var lis=document.getElementsByTagName('li')
-        for(var i=1;i<lis.length;i++){
+        for(var i=0;i<lis.length;i++){
             lis[i].onclick=function(){
+                console.log('点击了')
                 //返回undefined
                 //因为一个是标签的属性，一个是dom对象的属性，两者不一样
                 // alert(this.scroll)
                 alert(this.getAttribute("score"))
+                //设置一个新的自定义属性
+                this.setAttribute("me","我")
+                this.removeAttribute("class")
             }
         }
     </script>
