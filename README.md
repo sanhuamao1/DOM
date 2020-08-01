@@ -13,7 +13,8 @@
 
 ****由文档及文档中的所有元素（标签）组成的树形结构，叫做DOM树****
 
-![]([C:\Users\13433\Desktop\u=973985953,435444580&fm=26&gp=0.jpg](https://image.baidu.com/search/detail?ct=503316480&z=undefined&tn=baiduimagedetail&ipn=d&word=dom%E6%A0%91&step_word=&ie=utf-8&in=&cl=2&lm=-1&st=undefined&hd=undefined&latest=undefined&copyright=undefined&cs=973985953,435444580&os=3752920962,4144196870&simid=3477964545,276361370&pn=0&rn=1&di=1650&ln=583&fr=&fmq=1596248736789_R&fm=&ic=undefined&s=undefined&se=&sme=&tab=0&width=undefined&height=undefined&face=undefined&is=0,0&istype=0&ist=&jit=&bdtype=0&spn=0&pi=0&gsm=0&hs=2&objurl=http%3A%2F%2Fimages0.cnblogs.com%2Fblog2015%2F159998%2F201508%2F241258004366878.jpg&rpstart=0&rpnum=0&adpicid=0&force=undefined))
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200801173238392.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2FhYWFhcGlwaQ==,size_16,color_FFFFFF,t_70)
+
 
 # 操作页面例子引入
 
