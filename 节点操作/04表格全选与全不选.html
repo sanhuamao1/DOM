@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03切换背景图片</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    table{
+        margin: 100px auto;
+        width: 400px;
+        height: 250px;
+        text-align: center;
+        font-size: 18px;
+        background-color: rgb(228, 231, 230);
+    }
+    thead{
+        background-color: rgb(116, 143, 127);
+        color: snow;
+    }
+    th{
+        height: 36px;
+    }
+    tbody tr:hover{
+        background-color: rgb(245, 245, 245);
+    }
+
+</style>
+<body id="bd">
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="acheck"></th>
+                    <th>运动器材</th>
+                    <th>场所</th>                    
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>篮球</td>
+                    <td>运动场</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>足球</td>
+                    <td>运动场</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>排球</td>
+                    <td>运动场</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>乒乓球</td>
+                    <td>运动场</td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+
+    <script src="../common.js"></script>
+    <script>
+        //由单个到全部
+        //获取全选这个复选框
+        var acheck=myobj("acheck")
+        //获取tbody所有复选框
+        var tcheck=myobj("tbody").getElementsByTagName("input")
+        //根据全选复选框的状态，设置tbody中复选框的状态
+        acheck.onclick=function(){
+            for(var i=0;i<tcheck.length;i++){
+                tcheck[i].checked=this.checked
+            }
+        }
+        
+        //由全部到单个
+        //获取tbody的所有复选框，添加点击事件
+        for(var i=0;i<tcheck.length;i++){
+            tcheck[i].onclick=function(){
+                var flag=true //默认都被选中了
+                //判断是否所有的复选框都被选中
+                for(var j=0;j<tcheck.length;j++){
+                    if(!tcheck[j].checked){
+                        //没选择就进来
+                        //改变默认状态
+                        flag=false;
+                        break;
+                    }
+                }
+                acheck.checked=flag
+            }
+        }
+    </script>
+</body>
+</html>
