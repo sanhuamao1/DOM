@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19实现相册</title>
+</head>
+<style>
+    #main{
+        width: 600px;
+        margin: auto;
+        position: relative;
+    }
+    ul{
+        display: flex;
+        height: 100px;
+        position: absolute;
+        left: -45px;
+    }
+    li{
+        list-style-type: none;
+        flex: 1;
+        margin-left: 5px;;
+    }
+    li img{
+        width: 100%;
+        height: 100%;
+    }
+    li img:hover{
+        transform:translateY(-10px);
+        transition:all .5s
+    }
+    .show{
+        width: 100%;
+        height: 400px;
+        background-color: blueviolet;
+        position: absolute;
+        top: 130px;
+        text-align: center;
+    }
+    .show img{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<div id="main">
+    <ul>
+        <li><a href="./imgs/2.jpg" title="风景1"><img src="./imgs/2.jpg"/></a></li>
+        <li><a href="./imgs/3.jpg" title="风景2"><img src="./imgs/3.jpg"/></a></li>
+        <li><a href="./imgs//4.jpg" title="风景3"><img src="./imgs/4.jpg"/></a></li>
+        <li><a href="./imgs/5.jpg" title="风景4"><img src="./imgs/5.jpg"/></a></li>
+    </ul>
+    <div style="clear:both"></div>
+    <div class="show">
+        <img src="" id="img"/>
+        <p id="showp">请选择一张照片</p>
+    </div>
+
+</div>
+
+<script src="common.js"></script>
+<script>
+    //点a标签，把a标签中的nref的属性值给id为image 的src属性
+    //把a的title属性的值给id为desp标签赋值
+    //从ul中获取全部a标签
+    var a=document.getElementsByTagName("a");
+    for(var i=0;i<a.length;i++){
+        a[i].onclick=function(){
+            //为展示的img标签的src赋值
+            myobj("img").src=this.href
+            //为p内容赋值为title
+            myobj("showp").innerText=this.title
+            //阻止默认跳转
+            return false
+        }
+    }
+</script>
+</body>
+</html>

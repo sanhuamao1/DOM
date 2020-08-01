@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18阻止超链接默认跳转</title>
+</head>
+
+<body>
+    <!-- 方式1 -->
+   <a href="https://www.baidu.com/" onclick="alert('你点击了，但我不转');return false">百度1</a>
+   
+
+   <!-- 方式2 -->
+   <a href="https://www.baidu.com/" onclick="return f1()">百度2</a>
+    <script>
+        function f1(){
+            alert("你怎么又点我，我说了不转")
+            return false;
+        }
+    </script>
+
+    <!-- 方式3 -->
+   <a href="https://www.baidu.com/" id="a">百度3</a>
+   <script src="common.js"></script>
+    <script>
+       
+       myobj("a").onclick=function(){
+          alert("别点了别点了")
+           return false;
+       }
+    </script>
+</body>
+</html>

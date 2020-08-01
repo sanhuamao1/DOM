@@ -15,11 +15,16 @@
         嘎嘎嘎
     </textarea>
     <input id="btn" value="修改" type="button">
+    <input id="btn2" value="我禁用我自己" type="button">
+    <input value="我本身就禁用" type="button" disabled>
     
     <script src="common.js"></script>
     <script>
         myobj("btn").onclick=function(){
            myobj("text").value="嘎嘎嘎嘎嘎"
+        }
+        myobj("btn2").onclick=function(){
+           this.disabled=true
         }
     </script>
 </body>
