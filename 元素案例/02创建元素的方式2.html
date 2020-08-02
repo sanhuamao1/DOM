@@ -6,21 +6,17 @@
     <title>02创建元素的方式2</title>
 </head>
 <style>
-   div{
-    width:200px;
-    height: 200px;
-    border:1px solid green
-    } 
+
 </style>
 
 <body>
-    <input type="button" value="创建一个p" id="btn">
+    <input type="button" value="来一张图" id="btn">
     <div id="container"></div>
-
     <script src="../common.js"></script>
     <script>
+        //注意，如果innerHTML内的标签附带属性，记得要用单引号而不用双引号，否则会报错
         myobj('btn').onclick=function(){
-            myobj("container").innerHTML="<p>我是一个p标签</p>"
+            myobj("container").innerHTML="<img src='../imgs/2.jpg'/>"
         }
     </script>
 </body>
