@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05动态创建列表2-创建元素</title>
+</head>
+<body>
+    <input type="button" value="创建列表" id="btn">
+    <div id="container"></div>
+
+    <script src="../common.js"></script>
+    <script>
+        //你要渲染的列表
+        var names=["小红","小绿","小白","小蓝"]
+        myobj("btn").onclick=function(){
+           var ul=document.createElement("ul")
+           myobj("container").appendChild(ul)
+           for(var i=0;i<names.length;i++){
+               var li=document.createElement("li")
+               li.innerHTML=names[i]
+               ul.appendChild(li)
+           }
+        }
+    </script>
+</body>
+</html>
