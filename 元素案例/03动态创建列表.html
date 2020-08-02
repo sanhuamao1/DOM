@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03动态创建列表</title>
+</head>
+<body>
+    <input type="button" value="创建列表" id="btn">
+    <div id="container"></div>
+
+    <script src="../common.js"></script>
+    <script>
+        //你要渲染的列表
+        var names=["小红","小绿","小白","小蓝"]
+        myobj("btn").onclick=function(){
+            //创建一个字符串储存ul标签及其内容
+            var str="<ul>"  
+               //循环列表将每个li加进ul里面去
+                for(var i=0;i<names.length;i++){
+                    str+="<li>"+names[i]+"</li>"
+                }
+            str+="</ul>"
+            myobj("container").innerHTML=str
+        }
+    </script>
+</body>
+</html>
