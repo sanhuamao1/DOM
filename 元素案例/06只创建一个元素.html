@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06只创建一个元素</title>
+</head>
+<body>
+    <input type="button" value="创建元素" id="btn">
+    <div id="container"></div>
+
+    <script src="../common.js"></script>
+    <script>
+        myobj("btn").onclick=function(){
+           //先判断div内有没有子元素，有就删除
+           //假设这里要创建一个id名为p的p元素，先判断是否存在
+           if(myobj("p")){
+              myobj("container").removeChild(myobj("p"))
+              console.log('我删了')
+           }
+           //创建p元素
+            var p=document.createElement("p")
+            p.id="p"
+            p.innerText="这是一个p"
+            myobj("container").appendChild(p)
+        }
+    </script>
+</body>
+</html>
