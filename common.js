@@ -52,3 +52,21 @@ function addEventListener(element,type,fn){
         element["on"+type]=fn
     }
 }
+
+
+
+/*
+*元素解绑事件兼容函数
+*@params  element object类型；
+*@params  type string类型；事件类型
+*@params  fn 函数类型；处理函数
+*/
+function removeEventListener(element,type,fn){
+    if(element.removeEventListener){
+        element.removeEventListener(type,fn,false);
+    }else if(element.detachEvent){
+        element.detachEvent("on"+type,fn)
+    }else{
+        element["on"+type]=null
+    }
+}
