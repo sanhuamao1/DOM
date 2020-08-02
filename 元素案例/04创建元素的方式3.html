@@ -12,13 +12,14 @@
     <script src="../common.js"></script>
     <script>
         myobj("btn").onclick=function(){
-            //创建了一个空元素
+            //创建了一个空标签(元素)<p></p>
             var obj=document.createElement("p")
             //这里用到了再common.js封装函数，给标签添加内容
             setInnerText(obj,"这是一个p")
             //在父元素追加一个子元素，这里用到appendChild
             myobj("container").appendChild(obj)
         }
+        //缺点：可以无限次创建元素
     </script>
 </body>
 </html>
