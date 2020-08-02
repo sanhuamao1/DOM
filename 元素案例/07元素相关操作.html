@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07元素相关操作</title>
+</head>
+<body>
+    <input type="button" value="添加" id="btn1">
+    <input type="button" value="删除" id="btn2">
+    <input type="button" value="全删" id="btn3">
+
+    <div id="container" style="width: 200px;height: 200px;border: 1px solid black;"></div>
+
+    <script src="../common.js"></script>
+    <script>
+        var i=0
+
+        //添加按钮事件
+        myobj("btn1").onclick=function(){
+            i++
+            var obj=document.createElement("input")
+            obj.type="button"
+            obj.value="按钮"+i
+
+            //用appendChild给div添加子元素，是在后面添加---方式1
+            // myobj("container").appendChild(obj)
+            //用firstElementChild给div添加子元素，是在前面添加---方式2
+            myobj("container").insertBefore(obj,myobj("container").firstElementChild)
+        }
+
+        //删除事件,删除前面的
+        myobj("btn2").onclick=function(){
+            myobj("container").removeChild(myobj("container").firstElementChild)
+        }
+
+        //全部删除事件
+        myobj("btn3").onclick=function(){
+            //判断div的第一个元素在不在，在的话就删掉
+            while(myobj("container").firstElementChild){
+                myobj("container").removeChild(myobj("container").firstElementChild)
+            }
+        }
+    </script>
+</body>
+</html>
