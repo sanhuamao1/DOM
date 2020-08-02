@@ -203,7 +203,7 @@ document.getElementById("btn").onclick=function(){
 	>[综合方法实现添加元素、删除元素和全部删除](https://github.com/sanhuamao1/DOM/blob/master/%E5%85%83%E7%B4%A0%E6%A1%88%E4%BE%8B/07%E5%85%83%E7%B4%A0%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C.html)
 
 ## 元素绑定事件
-- `addEventListener("事件类型",事件处理函数,false)`
+- `addEventListener("事件类型",事件处理函数,控制事件的阶段|布尔值)`
 	```js
 	//这里的事件类型没有on，this是当前绑定的对象
 	addEventListener('click',function(){},false)
@@ -259,3 +259,28 @@ document.getElementById("btn").onclick=function(){
 	    }
 	}
 	```
+
+## 事件的三个阶段
+1. 事件捕获阶段：从外到里
+2. 事件目标阶段：你选中的那一个事件触发
+3. 事件冒泡阶段：从里到外
+
+### 事件冒泡
+多个元素嵌套，有层次关系，这些元素都注册了相同事件。如果里面的元素的事件触发了，外面的元素的相同事件会自动触发。事件从里到外触发。
+
+### 事件捕获
+它与事件冒泡相反。如果你点击了最内层的事件，它不会从内容开始触发，而是从外层依次往你点击的内层经过
+
+### 阻止事件冒泡
+1. 给内层元素的事件函数最后加上`window.event.cancelBubble=true`
+2. 给事件传入参数`e——事件处理参数对象`，并在函数内部加上`e.stopPropagation()`
+
+### 冒泡阶段与捕获阶段的转换
+```js
+//这里用到了addEventListener的第三个参数，
+//这个参数可以让我们在捕获阶段和冒泡阶段切换
+//冒泡阶段
+obj.addEventListener("click",function(e){},false )
+//冒泡阶段
+obj.addEventListener("click",function(e){},true)
+```
