@@ -10,7 +10,8 @@ function myobj(id){
 
 /*
 *textContent与innerText的兼容性处理，设置标签内容
-*@params  element object类型；text string类型
+*@params  element object类型；
+*@params  text string类型
 */
 function setInnerText(element,text){
     //判断浏览器是否支持
@@ -34,4 +35,20 @@ function getInnerText(element){
         return element.textContent;
     }
 
+}
+
+/*
+*元素绑定事件兼容函数
+*@params  element object类型；
+*@params  type string类型；事件类型
+*@params  fn 函数类型；处理函数
+*/
+function addEventListener(element,type,fn){
+    if(element.addEventListener){
+        element.addEventListener(type,fn,false);
+    }else if(element.attachEvent){
+        element.attachEvent("on"+type,fn)
+    }else{
+        element["on"+type]=fn
+    }
 }
