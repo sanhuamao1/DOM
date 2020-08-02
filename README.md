@@ -228,3 +228,34 @@ document.getElementById("btn").onclick=function(){
 	    }
 	}
 	```
+## 元素解绑事件
+1. 给事件赋值`null`
+
+	```js
+	//对象.on事件名称=nul
+	obj.onclick=null
+	```
+2. `removeEventListener`
+	```js
+	//注意：这种方法只能解绑命名函数事件
+	//对象.removeEventListener("事件名称",命名函数,false）
+	obj.removeEventListener=("click",f1,false)
+	```
+3. `detachEvent`
+	```js
+	//注意：这种方法只能解绑命名函数事件
+	//对象.detachEvent("on事件名称",命名函数）
+	obj.detachEvent=("onclick",f1)
+	```
+	**兼容封装**
+	```js
+	function removeEventListener(element,type,fn){
+	    if(element.removeEventListener){
+	        element.removeEventListener(type,fn,false);
+	    }else if(element.detachEvent){
+	        element.detachEvent("on"+type,fn)
+	    }else{
+	        element["on"+type]=null
+	    }
+	}
+	```
