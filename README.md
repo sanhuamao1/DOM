@@ -8,7 +8,7 @@
 # 概念
 - **文档**：一个页面就是一个文档，文档中有根元素——html——根元素
 - **元素（element）**：页面中所有的标签都是元素，元素可以看成是对象。标签可以嵌套，标签中有标签，元素中有元素
-- **节点（node）**：页面中所有的内容都是节点，标签 属性 文本
+- **节点（node）**：页面中所有的内容都是节点，标签，属性，文本。即元素属于节点的一部分。
 - **root:根**
 
 ****由文档及文档中的所有元素（标签）组成的树形结构，叫做DOM树****
@@ -86,7 +86,7 @@ document.getElementById("btn").onclick=function(){
 
 # 一些梳理
 ---
-## 获取元素的方式
+## DOM对象获取元素的方法
 - `document.getElementById('id属性值')`——根据id属性值获取，返回一个
 - `document.getElementsByTagName('标签名称')`——根据标签名获取，返回一个伪数组
 - `document.getElementsByName('name的属性值')`——根据name的属性获取，返回一个伪数组
@@ -127,9 +127,34 @@ document.getElementById("btn").onclick=function(){
  # 节点
  ---
 ## 属性
-  - nodeType：1----标签；2----属性；3---文本
-  - nodeName：标签节点---大写的标签名字；属性节点---小写的属性名字；文本节点---#text
-  - nodeValue：标签节点---null；属性节点---属性值；文本节点---文本内容
+  - nodeType
+    
+|节点种类| nodeType |  
+|--|--|
+|  元素| 1|
+|  属性| 2 |
+|  文本 |3 |
+|  注释| 8 |
+|  文档| 9 |
+
+  
+  - nodeName
+    
+| 节点种类 | nodeName |
+|--|--|
+| 标签节点 | 大写的标签名 |
+| 属性节点 | 小写的属性名 |
+| 文本节点 | #text |
+| 文档节点 | #document |
+
+  - nodeValue
+  
+| 节点种类 | nodeName |
+|--|--|
+| 标签节点 | undefined或者null |
+| 属性节点 | 属性值 |
+| 文本节点 | 文本内容|
+
 
 
 ## parentNode：父级节点
@@ -164,7 +189,7 @@ document.getElementById("btn").onclick=function(){
    console.log(div.childNodes)//NodeList(7) [text, span, text, p, text, ul#ul, text]
  </script>
   ```
-## 其他
+## 获取元素或节点的方式
 - `.parentElement`---父级元素
 - `.children`---子元素
 - `.firstChild`---第一个子节点
@@ -175,6 +200,10 @@ document.getElementById("btn").onclick=function(){
 - `.previousElementSibling`---某个元素的前一个兄弟元素
 - `.nextSibling`---某个元素的后一个兄弟元素
 - `.nextElementSibling`---某个元素的后一个兄弟元素
+## 创建节点的一些DOM方法
+- `createElement()`——创建元素节点
+- `createAttribute()`——创建属性节点
+- `createTextNode()`——创建文本节点
 
 ## 案例
 - [通过节点操作改变元素的背景颜色](https://github.com/sanhuamao1/DOM/blob/master/%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/01%E6%94%B9%E5%8F%98%E8%83%8C%E6%99%AF%E9%A2%9C%E8%89%B2.html)
@@ -195,12 +224,15 @@ document.getElementById("btn").onclick=function(){
 	>- [用createElement的方式创建列表](https://github.com/sanhuamao1/DOM/blob/master/%E5%85%83%E7%B4%A0%E6%A1%88%E4%BE%8B/05%E5%8A%A8%E6%80%81%E5%88%9B%E5%BB%BA%E5%88%97%E8%A1%A82-%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0.html)
 	>- [优化方式3 限制只创建一个元素](https://github.com/sanhuamao1/DOM/blob/master/%E5%85%83%E7%B4%A0%E6%A1%88%E4%BE%8B/06%E5%8F%AA%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0.html)
 
-## 相关方法
+## 一些DOM方法
 - `.appendChild`——追加子元素
 - `.insertBefore(你要添加的元素，父元素.firstElementChild)`——把新的子元素添加到第一个子元素的前面
 - `.removeChild(父元素.firstElementChild)`——删除父元素的第一个子元素
 	>***案例***
 	>[综合方法实现添加元素、删除元素和全部删除](https://github.com/sanhuamao1/DOM/blob/master/%E5%85%83%E7%B4%A0%E6%A1%88%E4%BE%8B/07%E5%85%83%E7%B4%A0%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C.html)
+- `.getAttribute("属性名")`——返回指定的属性值
+- `.setAttribute("属性名","属性值")`——把指定属性设置或修改为指定的值
+- `.removeAttribute("属性名")`——移除某一属性
 
 ## 元素绑定事件
 - `addEventListener("事件类型",事件处理函数,控制事件的阶段|布尔值)`
@@ -283,4 +315,11 @@ document.getElementById("btn").onclick=function(){
 obj.addEventListener("click",function(e){},false )
 //冒泡阶段
 obj.addEventListener("click",function(e){},true)
+```
+
+## 其他
+```
+document.body		//获取body标签
+document.title		//获取title的值
+document.documentElement		//获取html
 ```
