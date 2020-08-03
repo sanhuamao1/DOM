@@ -70,3 +70,12 @@ function removeEventListener(element,type,fn){
         element["on"+type]=null
     }
 }
+
+//获取向上卷曲出去的距离
+function getScroll(){
+    return{
+        //根据浏览器端兼容性写成：
+        left:window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollLeft||0,
+        top:window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0
+    }
+}
