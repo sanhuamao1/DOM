@@ -323,3 +323,70 @@ document.body		//获取body标签
 document.title		//获取title的值
 document.documentElement		//获取html
 ```
+
+# 元素拓展
+### 属性
+
+**offset系列**
+
+- `offsetWidth`——获取元素的宽 有边框|只读
+
+- `offsetHeight`——获取元素的高 有边框|只读
+
+- `offsetLeft`——获取元素距离左边的距离|只读
+
+- `offsetTopt`——获取元素距离上边的距离|只读
+  
+- `offsetParent`——元素的父元素，如果没有就是body元素|只读
+  
+  > 元素的宽高样式无法直接通过style获取，除非你在style内联属性中设置，这时候就需要offset  width和offsetheigth
+  
+  >在一般情况下，位置的数值=父级元素的margin+padding+border+自己的margin
+  >在子绝父相脱离文档流的情况下，位置的数值=自己的位置+自己的margin
+
+
+
+
+
+**scroll系列**
+- `scrollWidth`——元素中内容的实际宽度 没有边框 如果没有内容就是元素的宽
+- `scrollHeight`——元素中内容的实际高度 没有边框 如果没有内容就是元素的高
+- `scrollLeft`——再有滚动条的情况下，内容隐藏的最左边的距离到可见的最左边的距离
+- `scrollTop`——向上卷曲出去的距离，内容隐藏的最上边的距离到可见的最上边的距离
+
+	```js
+	//封装getScroll函数：可以获取页面向上或向左卷曲出去的距离
+	function getScroll(){
+	    return{
+	 left:window.pageXOffset||document.documentElement.scrollLeft||document.body.scrollLeft||0,   top:window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0
+	    }
+	}
+	```
+
+
+
+**client系列**
+- `clientWidth`——可视区域的宽 没有边框
+- `clientHeight`——可视区域的高 没有边框
+- `clientLeft`——左边框的宽度
+- `clientTop`——上边框的高度
+---
+
+- `style`——获取/设置元素的style属性
+- `accessKey`——获取/设置元素访问的快捷键
+- `lang`——获取/设置元素属性、文本、内容的语言
+
+
+
+- `e.onscroll=function`——获取或设置元素滚动时的事件
+- `e.onchange=function`——获取或设置元素的`change`时的事件.
+- `e.onblur = function`——获取或设置元素的失去焦点时的事件
+- `e.onclick = function`——获取或设置元素的click时的事件
+- `e.oninput = function(e)`
+
+
+
+### 方法
+- `e.blur()`——元素失去焦点
+- `e.click()`——触发元素的点击事件
+- `e.focus()`——元素获得焦点
